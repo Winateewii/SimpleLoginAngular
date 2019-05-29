@@ -1,0 +1,27 @@
+table td, table th {
+    color: #2b686e;
+    padding: 10px;
+  }
+
+  table td {
+    background-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  table th {
+    background-color: #daeff1;
+    font-weight: 300;
+  }
+  caption {
+    background-color: #327a81;
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #327a81;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    width: 800px;
+  }

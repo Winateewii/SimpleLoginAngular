@@ -1,0 +1,66 @@
+/* @import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css); */
+
+.loginbox{
+    width :320px;
+    height: 420px;
+    /* สีพื้นหลัง */
+    background: rgb(158, 203, 255);
+    /* สีตัวหนังสือ */
+    color: rgb(12, 11, 11);
+    top: 50%;
+    left: 50%;
+    /* ตำแหน่งตรงกึ่งกลาง */
+    position: absolute ;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 50px;
+}
+.avatar{
+    width: 100px ;
+    height : 100px ;
+    border-radius: 50% ;
+    position: absolute ;
+    top: -50px; 
+    left : 112px;
+    /* padding: 1px 110px; */
+}
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    padding: 0 0 20px;
+}
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid rgb(185, 12, 12);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: rgb(66, 60, 60);
+    font-size: 16px;
+}
+.loginbox button
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    width : 110px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.loginbox small{
+    color: #fb2525;
+}
+

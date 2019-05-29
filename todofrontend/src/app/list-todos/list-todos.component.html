@@ -1,0 +1,24 @@
+
+<div class ="container">
+  <h1>My Todo's</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>description</th>
+      <th>done</th>
+      <th>targetDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- for (Todo todo : todos) -->
+    <!-- todo หลัง let เอาไว้ใช้ใน template -->
+    <tr *ngFor="let todo of todos">
+      <td>{{todo.id}}</td>
+      <td>{{todo.description}}</td>
+      <td>{{todo.done}}</td>
+      <td>{{todo.targetDate}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
