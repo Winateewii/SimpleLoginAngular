@@ -1,2 +1,6 @@
 <div class="container"><h1>Welcome "{{name}}" </h1>
  Go to see and manage Todo list <a routerLink="/todo">Here</a></div>
+
+ <div class="container">Click here to customized welcome message
+     <button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Messege</button>
+ </div>

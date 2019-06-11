@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AppComponent } from '../app.component';
 import { ActivatedRoute } from '@angular/router';
+import { WelcomeDataService } from '../service/data/welcome-data.service';
 
 //@ComponentScan(
 //        value = "com.in28minutes.springboot.web" )
@@ -25,7 +26,8 @@ export class WelcomeComponent implements OnInit {
   //public SpringBootFirstWebApplication(){
   
   //ActivetedRoute คือแสดงค่า path ปัจจุบันออกมาใช้ได้ง่าย ๆ
-  constructor(private route : ActivatedRoute) { }
+  constructor(private route : ActivatedRoute,
+    private welcomeService : WelcomeDataService ) { }
 
   // void init(){
   ngOnInit(){
@@ -34,6 +36,25 @@ export class WelcomeComponent implements OnInit {
     // เราต้อง import ActivatedRoute เพื่อใช้คำสั่งในการดึง id จาก paramMap ตามด้วย get(“parameter”) ที่เรา config routes ในไฟล์ app.component.ts ยังจำกันได้ไหมเอ่ยย ??? editWiki/:id ตรงนี้แหละที่เป็นชื่อ parameter ที่เราจะส่งไปยัง method this.route.snapshot.paramMap.get(“id”)
     console.log(this.route.snapshot.params['name'])
     this.name = this.route.snapshot.params['name'];
+  }
+
+  getWelcomeMessage(){
+    console.log("Welcom message")
+    console.log( this.welcomeService.executeHelloWorldService());
+    //subscribe เป็นตัวไว้จับข้อมูลแบบ asynchronous จะขึ้นในหน้า network ด้วย 
+    // set ค่าหลังบ้านให้รับหน้าบ้านให้ได้ด้วยนะจีะ 
+    this.welcomeService.executeHelloWorldService().subscribe(
+      //ใน subscribe คือส่วนที่ทำงานเสร็จจะทำอะไรต่อ
+      response =>  this.handleSuccessfulResponse(response)
+      // response => console.log(response.message)
+    );
+    console.log("------end------");
+
+  }
+
+  handleSuccessfulResponse(response){
+    console.log(response);
+    console.log(response.message);
   }
 
 }
