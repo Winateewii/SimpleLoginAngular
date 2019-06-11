@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+export class HelloWorldBean{
+  constructor( public message : String){
+  }
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class HelloWorldBean{
-  constructor( public message : String){
-
-  }
-}
-
 export class WelcomeDataService {
 
   constructor(

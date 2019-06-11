@@ -22,6 +22,7 @@ export class WelcomeComponent implements OnInit {
   //String message = "Some Welcome Message"
   message : String = 'Some Welcome Message'
   name : String
+  welcomeMessageFromService : string
 
   //public SpringBootFirstWebApplication(){
   
@@ -55,6 +56,7 @@ export class WelcomeComponent implements OnInit {
   handleSuccessfulResponse(response){
     console.log(response);
     console.log(response.message);
+    this.welcomeMessageFromService = response.message
   }
 
 }
