@@ -46,7 +46,8 @@ export class WelcomeComponent implements OnInit {
     // set ค่าหลังบ้านให้รับหน้าบ้านให้ได้ด้วยนะจีะ 
     this.welcomeService.executeHelloWorldService().subscribe(
       //ใน subscribe คือส่วนที่ทำงานเสร็จจะทำอะไรต่อ
-      response =>  this.handleSuccessfulResponse(response)
+      response =>  this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
       // response => console.log(response.message)
     );
     console.log("------end------");
@@ -57,6 +58,13 @@ export class WelcomeComponent implements OnInit {
     console.log(response);
     console.log(response.message);
     this.welcomeMessageFromService = response.message
+  }
+
+  handleErrorResponse(error){
+    console.log(error);
+    console.log(error.error);
+    console.log(error.error.message);
+    this.welcomeMessageFromService = error.error.message
   }
 
 }
