@@ -41,10 +41,10 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessage(){
     console.log("Welcom message")
-    console.log( this.welcomeService.executeHelloWorldService());
+    console.log( this.welcomeService.executeHelloWorldService(this.name));
     //subscribe เป็นตัวไว้จับข้อมูลแบบ asynchronous จะขึ้นในหน้า network ด้วย 
     // set ค่าหลังบ้านให้รับหน้าบ้านให้ได้ด้วยนะจีะ 
-    this.welcomeService.executeHelloWorldService().subscribe(
+    this.welcomeService.executeHelloWorldService(this.name).subscribe(
       //ใน subscribe คือส่วนที่ทำงานเสร็จจะทำอะไรต่อ
       response =>  this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
